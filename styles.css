@@ -1,0 +1,159 @@
+/*===========================================
+  PORTFOLIO WEBSITE STYLES
+  Author: Ravi Chaudhary
+  Description: Custom CSS styles for portfolio website
+===========================================*/
+
+/*-------------------------------------------
+  TYPOGRAPHY
+-------------------------------------------*/
+/* Font family for all text elements */
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+/*-------------------------------------------
+  LAYOUT & SPACING
+-------------------------------------------*/
+/* Image spacing in photo grid */
+.w3-row-padding img {
+  margin-bottom: 12px;
+}
+
+/* Sidebar styling - fixed width */
+.w3-sidebar {
+  width: 120px;
+  background: #222;
+}
+
+/* Main content margin to accommodate sidebar */
+#main {
+  margin-left: 120px;
+}
+
+/*-------------------------------------------
+  NAVIGATION
+-------------------------------------------*/
+/* Mobile navigation bar padding */
+.mobile-nav {
+  padding: 3px;
+}
+
+/* Navigation item widths */
+.nav-home { width: 17% !important; }
+.nav-about { width: 17% !important; }
+.nav-photos { width: 18% !important; }
+.nav-books { width: 28% !important; }
+.nav-contact { width: 20% !important; }
+
+/*-------------------------------------------
+  SECTIONS
+-------------------------------------------*/
+/* About section styling */
+.about-hr {
+  width: 200px;
+  padding-bottom: 5px;
+}
+
+/* Skills section padding */
+.skills-section {
+  padding-top: 10px;
+}
+
+/* Experience section title */
+.experience-title {
+  font-size: 2em;
+}
+
+/* Experience cards */
+.experience-card {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Experience images */
+.experience-img-provider {
+  width: 100px;
+  border: 3px solid #666;
+}
+
+.experience-img-mygov {
+  height: 80px;
+  border: 3px solid #666;
+}
+
+/* Experience text styling */
+.experience-title-provider {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.experience-title-mygov {
+  color: #2196F3;
+  font-weight: bold;
+}
+
+.experience-company {
+  color: #ddd;
+}
+
+.experience-description {
+  line-height: 1.8;
+  color: #bbb;
+}
+
+/*-------------------------------------------
+  PHOTOS SECTION
+-------------------------------------------*/
+/* Photo grid margin */
+.photo-grid {
+  margin: 0 -16px;
+}
+
+/* Photo section hr */
+.photo-hr {
+  width: 200px;
+}
+
+/* Individual photos */
+.photo-item {
+  width: 100%;
+}
+
+/*-------------------------------------------
+  CONTACT SECTION
+-------------------------------------------*/
+/* Contact section hr */
+.contact-hr {
+  width: 200px;
+}
+
+/* Contact form spacing */
+.contact-form-item {
+  margin-bottom: 10px;
+}
+
+.contact-intro {
+  margin-bottom: 10px;
+}
+
+/*-------------------------------------------
+  MODAL SECTION
+-------------------------------------------*/
+/* Modal image styling */
+.modal-image-contain {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/*-------------------------------------------
+  RESPONSIVE DESIGN
+-------------------------------------------*/
+/* Remove sidebar margin on mobile devices */
+@media only screen and (max-width: 600px) {
+  #main {
+    margin-left: 0;
+  }
+}
