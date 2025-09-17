@@ -8,15 +8,39 @@
   ABOUT SECTION - Resume Functions
 -------------------------------------------*/
 // Password protected resume editing function
-function validateAndEdit() {
-  const password = prompt("Please enter the password to Edit resume:");
-  if (password === "9580156837") {
-    window.open("https://1drv.ms/w/c/75a4b93c1d7f31cf/Ec8xfx08uaQggHVpHgAAAAABSMC7xsM_ZJXLJ_i3AYiZNw?e=rhYco9", "_blank");
-  } else {
-    alert("Invalid password. Access denied.");
+// function validateAndEdit() {
+//   const password = prompt("Please enter the password to Edit resume:");
+//   if (password === "9580156837") {
+//     window.open("https://1drv.ms/w/c/75a4b93c1d7f31cf/Ec8xfx08uaQggHVpHgAAAAABSMC7xsM_ZJXLJ_i3AYiZNw?e=rhYco9", "_blank");
+//   } else {
+//     alert("Invalid password. Access denied.");
+//   }
+// }
+async function validateValue() {
+  const url = "https://script.google.com/macros/s/AKfycbzsLpYBd1JNvlpK8Zvlo1Ow1pVCHvjkxhMwpVatZkcsTDj2aIQKQ0nSJkIDagIgXbgd/exec";
+
+  try {
+    // Fetch value from Google Sheets
+    let response = await fetch(url);
+    let sheetValue = await response.text();
+
+    // Ask user for input
+    let userInput = prompt("Enter value to validate:");
+
+    if (userInput === null) return; // user pressed cancel
+
+    if (userInput === sheetValue) {
+      alert("✅ Password Matches!");
+      window.open("https://1drv.ms/w/c/75a4b93c1d7f31cf/Ec8xfx08uaQggHVpHgAAAAABSMC7xsM_ZJXLJ_i3AYiZNw?e=rhYco9", "_blank");
+    } else {
+      alert("❌ Incorrect Password. Try again.");
+    }
+
+  } catch (error) {
+    console.error(error);
+    alert("Error fetching value from Google Sheet.");
   }
 }
-
 
 /*-------------------------------------------
   PROJECTS SECTION - Toggle Functions
@@ -34,43 +58,66 @@ function toggleList(id) {
 /*-------------------------------------------
   PROJECT MODAL - Slideshow Functions
 -------------------------------------------*/
-// Global variables for slideshow
-let currentSlide = 0;
-let slides;
+// Add specific slide tracking for each modal
+let slideIndices = {
+  'bharatDarshanModal': 1, // Updated modal ID
+  'greenHumanity': 1,
+  'myHealth': 1
+};
 
-// Open project modal and initialize slideshow
+// Modified changeSlide function to handle multiple modals 
+function changeSlide(n, modalId) {
+  showSlides(slideIndices[modalId] += n, modalId);
+}
+
+// Modified showSlides function to handle multiple modals
+function showSlides(n, modalId) {
+  let i;
+  let modal = document.getElementById(modalId);
+  let slides = modal.getElementsByClassName("slides");
+
+  if (n > slides.length) {
+    slideIndices[modalId] = 1;
+  }
+  if (n < 1) {
+    slideIndices[modalId] = slides.length;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[slideIndices[modalId] - 1].style.display = "block";
+}
+
+// Initialize slides for each modal when opened
 function openModal(modalId) {
   document.getElementById(modalId).classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-  slides = document.querySelectorAll('.slides');
-  currentSlide = 0;
+  slideIndices[modalId] = 1;
+  showSlides(1, modalId);
 }
 
-// Close project modal and restore scrolling
+// Close modal function
 function closeModal(modalId) {
   document.getElementById(modalId).classList.add('hidden');
-  document.body.style.overflow = 'auto';
 }
 
-// Navigate through project screenshots
-function changeSlide(direction) {
-  if (!slides || slides.length === 0) return;
-  
-  slides[currentSlide].classList.add('hidden');
-  currentSlide += direction;
+// Initialize slide indices when page loads
+document.addEventListener('DOMContentLoaded', () => {
+  slideIndices = {
+    'bharatDarshanModal': 1, // Updated modal ID
+    'greenHumanity': 1,
+    'myHealth': 1
+  };
+});
 
-  if (currentSlide >= slides.length) currentSlide = 0;
-  if (currentSlide < 0) currentSlide = slides.length - 1;
-
-  slides[currentSlide].classList.remove('hidden');
-}
 
 /*-------------------------------------------
   INITIALIZATION & EVENT LISTENERS
 -------------------------------------------*/
 // Initialize all functionality when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  
+document.addEventListener('DOMContentLoaded', function () {
+
   /*-------------------------------------------
     MODAL EVENT LISTENERS
   -------------------------------------------*/
@@ -126,3 +173,25 @@ document.addEventListener('DOMContentLoaded', function() {
     skillObserver.observe(item);
   });
 });
+
+/*-------------------------------------------
+  CONTACT SECTION - Form Submission
+-------------------------------------------*/
+// Google Apps Script URL for form submission
+const scriptURL = 'https://script.google.com/macros/s/AKfycbx7tNovpeEmgN0uGkhFTgZE9BJvSv0q04Z9UmVi72WsqXh1RALSGEuahaHmsa9N4Ai7/exec'
+
+// Handle contact form submission
+function submitForm(e) {
+  e.preventDefault()
+  let formData = new FormData()
+  formData.append('Name', document.getElementById('name').value)
+  formData.append('Email', document.getElementById('email').value)
+  formData.append('Message', document.getElementById('message').value)
+
+  fetch(scriptURL, { method: 'POST', body: formData })
+    .then(response => {
+      alert('Success! Message sent successfully')
+      document.getElementById('contactForm').reset()
+    })
+    .catch(error => console.error('Error!', error.message))
+}

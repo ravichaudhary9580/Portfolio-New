@@ -10,21 +10,22 @@
 <html>
 
 <!-- Page Head - Meta tags and external resources -->
+
 <head>
-<link rel="icon" type="image/x-icon" href="image/logo/Hat.ico">
-<title>Welcome to dev.ravi</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="image/logo/Hat.ico">
+  <title>Welcome to dev.ravi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- External CSS Libraries -->
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- External CSS Libraries -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- Custom Styles -->
-<link rel="stylesheet" href="styles.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="w3-black">
@@ -73,7 +74,7 @@
     MAIN CONTENT AREA
   ===========================================-->
   <div class="w3-padding-large" id="main">
-    
+
     <!-- HOME SECTION -->
     <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
       <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Ravi.Dev</h1>
@@ -120,13 +121,18 @@
 
       <div class="flex gap-4 mt-8">
         <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
-          <a href="https://1drv.ms/w/c/75a4b93c1d7f31cf/Ec8xfx08uaQggHVpHgAAAAABSMC7xsM_ZJXLJ_i3AYiZNw?e=rhYco9" target="_blank"><i class="fa fa-download mr-2"></i> Download Resume</a>
+          <a href="https://1drv.ms/w/c/75a4b93c1d7f31cf/Ec8xfx08uaQggHVpHgAAAAABSMC7xsM_ZJXLJ_i3AYiZNw?e=rhYco9"
+            target="_blank"><i class="fa fa-download mr-2"></i> Download Resume</a>
         </button>
         <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300"
-          onclick="validateAndEdit()">
+          onclick="this.style.cursor='wait'; validateValue()">
           <i class="fa fa-edit mr-2"></i> Edit Resume
         </button>
       </div>
+
+      <!--===========================================
+            My Work
+     ===========================================-->
       <h3 class="text-3xl font-bold text-white mt-16 mb-8">My Work</h3>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-gray-800 rounded-lg overflow-hidden">
@@ -134,7 +140,7 @@
             <h4 class="text-xl font-bold text-center text-green-500">Major Projects</h4>
           </div>
           <div id="majorList" class="text-white">
-            <a href="javascript:void(0)" onclick="openModal('bharatDarshan')"
+            <a href="javascript:void(0)" onclick="openModal('bharatDarshanModal')"
               class="block p-4 hover:bg-orange-600 text-center transition-colors duration-100">Bharat Darshan</a>
             <a href="javascript:void(0)" onclick="openModal('greenHumanity')"
               class="block p-4 hover:bg-green-500 text-center transition-colors duration-100">Green Humanity</a>
@@ -159,7 +165,7 @@
         </div>
       </div>
     </div>
-    
+
     <!--===========================================
       SKILLS SECTION
     ===========================================-->
@@ -213,7 +219,7 @@
         </div>
       </div>
     </section>
-    
+
     <!--===========================================
       EXPERIENCE SECTION
     ===========================================-->
@@ -280,31 +286,38 @@
   ===========================================-->
   <!-- Contact Section -->
   <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <h2 class="w3-text-light-grey text-3xl">Contact Me</h2>
     <hr style="width:200px" class="w3-opacity">
 
     <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> New Delhi, India</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +91 9580156837</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email:
-        ravichaudhary7570@gmail.com</p>
+      <p><i class="fa fa-map-marker fa-fw w3-text-red w3-xxlarge w3-margin-right hover:bg-red-800"></i> New Delhi, India</p>
+      <p><i class="fa fa-phone fa-fw w3-text-green w3-xxlarge w3-margin-right hover:bg-gray-200"></i> Phone: +91 9580156837</p>
+      <a href="https://linkedin.com/in/ravichaudhary9580" target="_blank">
+        <p><i class="fa fa-linkedin fa-fw w3-text-white w3-xxlarge w3-margin-right hover:bg-blue-800"> </i> LinkedIn</p>
+      </a>
+      <a href="https://github.com/ravichaudhary9580" target="_blank">
+        <p><i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right hover:bg-gray-600"> </i> GitHub</p>
+      </a>
+      <p><i class="fa fa-envelope fa-fw w3-text-blue w3-xxlarge w3-margin-right hover:bg-gray-600"> </i> Email:
+        <a href="mailto:ravichaudhary7570@gmail.com">ravichaudhary7570@gmail.com</a>
+      </p>
     </div><br>
     <p style="margin-bottom:10px">Let's get in touch. Send me a message:</p>
 
-    <form action="/action_page.php" target="_blank">
+    <!--  Form -->
+    <form id="contactForm" onsubmit="submitForm(event)">
       <p style="margin-bottom:10px"><input class="w3-input w3-padding-16" type="text" placeholder="Name" required
-          name="Name"></p>
+          name="Name" id="name"></p>
       <p style="margin-bottom:10px"><input class="w3-input w3-padding-16" type="text" placeholder="Email" required
-          name="Email"></p>
+          name="Email" id="email"></p>
       <p style="margin-bottom:10px"><input class="w3-input w3-padding-16" type="text" placeholder="Message" required
-          name="Message"></p>
+          name="Message" id="message"></p>
       <p>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
       </p>
     </form>
-    <!-- End Contact Section -->
   </div>
 
   <!--===========================================
@@ -312,30 +325,30 @@
   ===========================================-->
   <!-- Footer -->
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <a href="https://github.com/ravichaudhary9580"><i class="fa fa-github w3-hover-opacity"></i></a>
-    <a href="https://www.linkedin.com/in/ravichaudhary9580/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+
     <p class="w3-medium">Powered by GitHub Pages</p>
+    <p class="w3-small">Crafted by dev.ravi</p>
     <!-- End footer -->
   </footer>
 
   <!-- END PAGE CONTENT -->
   </div>
-  
+
   <!--===========================================
     MODAL SECTION
   ===========================================-->
   <!-- Project Modal -->
-  <div id="bharatDarshan"
+  <div id="bharatDarshanModal"
     class="modal fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
     <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
       <div class="p-6">
         <div class="flex justify-between items-center mb-6">
-          <h2 class="text-2xl font-bold text-blue-400">Bharat Darshan Project</h2>
-          <button onclick="closeModal('bharatDarshan')" class="text-gray-400 hover:text-white text-2xl">
+          <h2 class="text-2xl font-bold text-orange-500">Bharat Darshan Project</h2>
+          <button onclick="closeModal('bharatDarshanModal')" class="text-gray-400 hover:text-white text-2xl">
             <i class="fas fa-times"></i>
           </button>
         </div>
-        <div class="slideshow-container relative">
+        <div class="slideshow-container relative" data-modal="bharatDarshanModal">
           <div class="slides">
             <img src="image/mywork/Bharatdarshan/1.png" alt="Screenshot 1" class="w-full h-auto rounded-lg">
           </div>
@@ -375,11 +388,11 @@
               style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
               class="w-full h-auto rounded-lg">
           </div>
-          <button onclick="changeSlide(-1)"
+          <button onclick="changeSlide(-1, 'bharatDarshanModal')"
             class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
             <i class="fas fa-chevron-left"></i>
           </button>
-          <button onclick="changeSlide(1)"
+          <button onclick="changeSlide(1, 'bharatDarshanModal')"
             class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
             <i class="fas fa-chevron-right"></i>
           </button>
@@ -387,28 +400,206 @@
       </div>
     </div>
   </div>
-  
-  <!-- Camera Verification Modal -->
-  <div id="cameraModal" class="modal fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
-    <div class="modal-content bg-gray-900 rounded-lg max-w-md w-full p-6">
-      <div class="text-center">
-        <h2 class="text-2xl font-bold text-blue-400 mb-4">Camera Verification</h2>
-        <p class="text-gray-300 mb-4">Please allow camera access and look at the camera for verification</p>
-        <video id="cameraVideo" class="w-full h-64 bg-black rounded-lg mb-4" autoplay></video>
-        <div class="flex gap-4 justify-center">
-          <button onclick="verifyAndDownload()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
-            <i class="fa fa-check mr-2"></i>Verify & Download
+
+
+  <div id="greenHumanity"
+    class="modal fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
+    <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold text-green-500">Green Humanity Project</h2>
+          <button onclick="closeModal('greenHumanity')" class="text-gray-400 hover:text-white text-2xl">
+            <i class="fas fa-times"></i>
           </button>
-          <button onclick="closeCameraModal()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
-            <i class="fa fa-times mr-2"></i>Cancel
+        </div>
+        <div class="slideshow-container relative" data-modal="greenHumanity">
+          <div class="slides">
+            <img src="image/mywork/greenHumanity/1.png" alt="Screenshot 1" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/2.png" alt="Screenshot 2" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/3.png" alt="Screenshot 3" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/4.png" alt="Screenshot 4"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-auto h-full rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/5.png" alt="Screenshot 5"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/6.png" alt="Screenshot 6"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/7.png" alt="Screenshot 7"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/8.png" alt="Screenshot 8"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/9.png" alt="Screenshot 9"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/10.png" alt="Screenshot 10"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <button onclick="changeSlide(-1, 'greenHumanity')"
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button onclick="changeSlide(1, 'greenHumanity')"
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+            <i class="fas fa-chevron-right"></i>
           </button>
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- External JavaScript File -->
-  <script src="script.js"></script>
+
+
+  <div id="myHealth"
+    class="modal fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
+    <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold text-green-500">My Health Project</h2>
+          <button onclick="closeModal('myHealth')" class="text-gray-400 hover:text-white text-2xl">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="slideshow-container relative" data-modal="greenHumanity">
+          <div class="slides">
+            <img src="image/mywork/myHealth/1.png" alt="Screenshot 1" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/myHealth/2.png" alt="Screenshot 2" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/myHealth/3.png" alt="Screenshot 3" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/myHealth/4.png" alt="Screenshot 4"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-auto h-full rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/myHealth/5.png" alt="Screenshot 5"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/myHealth/6.png" alt="Screenshot 6"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/myHealth/7.png" alt="Screenshot 7"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/myHealth/8.png" alt="Screenshot 8"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/myHealth/9.png" alt="Screenshot 9"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/myHealth/10.png" alt="Screenshot 10"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <button onclick="changeSlide(-1, 'myHealth')"
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button onclick="changeSlide(1, 'myHealth')"
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <br>
+      <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] p-6">
+        <h3 class="text-2xl font-bold text-green-500 mb-4">Project Details</h3>
+
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Description</h4>
+          <p class="text-gray-300 leading-relaxed">
+            My Health is a comprehensive healthcare management system designed to help users track and manage their
+            personal health information. The application provides features for monitoring vital signs, scheduling
+            appointments, managing medications, and accessing health records securely.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside text-gray-300 space-y-2">
+            <li>Personal health dashboard with vital signs monitoring</li>
+            <li>Appointment scheduling and reminders</li>
+            <li>Medication tracking and alerts</li>
+            <li>Secure storage of medical records</li>
+            <li>Integration with healthcare providers</li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Technical Specifications</h4>
+          <div class="grid grid-cols-2 gap-4 text-gray-300">
+            <div>
+              <p class="font-semibold">Frontend:</p>
+              <ul class="list-disc list-inside">
+                <li>React.js</li>
+                <li>Tailwind CSS</li>
+                <li>Material UI</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Backend:</p>
+              <ul class="list-disc list-inside">
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>MongoDB</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xl text-white mb-2">Project Links</h4>
+          <div class="flex space-x-4 " style="padding-bottom: 15px;">
+            <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+              <i class="fab fa-github mr-2"></i>
+              GitHub Repository
+            </a>
+            <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+              <i class="fas fa-external-link-alt mr-2"></i>
+              Live Demo
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- External JavaScript File -->
+    <script src="script.js"></script>
 </body>
 
 </html>
