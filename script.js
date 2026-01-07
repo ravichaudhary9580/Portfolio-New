@@ -400,3 +400,85 @@ function updateVisitCount() {
 
 // Call function when page loads
 window.addEventListener('load', updateVisitCount);
+
+/*-------------------------------------------
+  CERTIFICATE HOVER - PDF MODAL
+-------------------------------------------*/
+// Object to store hover timers for each certificate card
+let hoverTimers = {};
+
+// Function to open PDF modal
+function openPdfModal(pdfUrl) {
+  const modal = document.getElementById('pdfModal');
+  const iframe = document.getElementById('pdfFrame');
+  
+  if (modal && iframe) {
+    iframe.src = pdfUrl;
+    modal.classList.remove('hidden');
+    // Prevent background scrolling
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Function to close PDF modal
+function closePdfModal() {
+  const modal = document.getElementById('pdfModal');
+  const iframe = document.getElementById('pdfFrame');
+  
+  if (modal && iframe) {
+    modal.classList.add('hidden');
+    iframe.src = '';
+    // Restore background scrolling
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+  }
+}
+
+// Initialize certificate hover functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const certCards = document.querySelectorAll('.certification-card[data-pdf]');
+  
+  certCards.forEach(card => {
+    const pdfUrl = card.getAttribute('data-pdf');
+    const cardId = pdfUrl; // Use PDF URL as unique identifier
+    
+    // Mouse enter event - start 2 second timer
+    card.addEventListener('mouseenter', function() {
+      // Clear any existing timer for this card
+      if (hoverTimers[cardId]) {
+        clearTimeout(hoverTimers[cardId]);
+      }
+      
+      // Set new 2-second timer
+      hoverTimers[cardId] = setTimeout(function() {
+        openPdfModal(pdfUrl);
+      }, 2000); // 2000ms = 2 seconds
+    });
+    
+    // Mouse leave event - cancel timer
+    card.addEventListener('mouseleave', function() {
+      if (hoverTimers[cardId]) {
+        clearTimeout(hoverTimers[cardId]);
+        delete hoverTimers[cardId];
+      }
+    });
+  });
+  
+  // Close modal when clicking on overlay
+  const modal = document.getElementById('pdfModal');
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal || e.target.classList.contains('pdf-modal-overlay')) {
+        closePdfModal();
+      }
+    });
+  }
+  
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closePdfModal();
+    }
+  });
+});
