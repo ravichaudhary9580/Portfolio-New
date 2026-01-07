@@ -78,8 +78,88 @@
     <!-- HOME SECTION -->
     <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
       <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Ravi.Dev</h1>
-      <p>Student and Web Designer.</p>
-      <img src="image/myphoto/raviblack3.png" alt="boy" class="w3-image" width="992" height="1108">
+      <p>Student and Web Developer.</p>
+
+      <!-- Interactive Image Container -->
+      <div class="interactive-image-container">
+        <img src="image/myphoto/raviblack3.png" alt="boy" class="w3-image" width="992" height="1108">
+
+        <!-- Hoverable Region 1: Head/Face Area -->
+        <div class="hover-region region-head" data-region="head">
+          <div class="hover-card">
+            <h3>💡 Creative Thinker</h3>
+            <p>"There is a little brain inside so don't hover for too long it will Hurt."</p>
+            <span class="author">- ravi.dev</span>
+          </div>
+          <!-- Brain Zoom Animation -->
+          <div class="brain-zoom-container hidden">
+            <div class="brain-visual">
+              <img src="/image/brain.gif" alt="Brain with Neural Network" class="brain-image">
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Hoverable Region 2: Upper Body Area -->
+        <div class="hover-region region-upper" data-region="upper">
+          <div class="hover-card">
+            <h3>💻 Full Stack Developer</h3>
+            <p>Building scalable web applications with modern technologies</p>
+            <div class="tech-badges">
+              <span class="badge">React</span>
+              <span class="badge">Node.js</span>
+              <span class="badge">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hoverable Region 3: Lower Body Area -->
+        <div class="hover-region region-lower" data-region="lower">
+          <div class="hover-card">
+            <h3>🎯 Goal Oriented</h3>
+            <p>"The only way to do great work is to love what you do."</p>
+            <span class="author">- Steve Jobs</span>
+          </div>
+        </div>
+
+        <!-- Hoverable Region 4: Left Side -->
+        <div class="hover-region region-left" data-region="left">
+          <div class="hover-card">
+            <h3>📚 Continuous Learner</h3>
+            <p>Always exploring new technologies and enhancing skills</p>
+            <ul class="learning-list">
+              <li>Full-Stack Development</li>
+              <li>Enterprise Solutions </li>
+              <li>DevOps</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Hoverable Region 5: Right Side -->
+        <div class="hover-region region-right" data-region="right">
+          <div class="hover-card">
+            <h3>🚀 Problem Solver</h3>
+            <p>Turning complex challenges into elegant solutions</p>
+            <div class="achievement">10+ Projects Completed</div>
+          </div>
+        </div>
+
+        <!-- Hoverable Region 6: Center/Vision Area -->
+        <div class="hover-region region-center" data-region="center">
+          <div class="hover-card">
+            <h3>🎯 My Vision</h3>
+            <p>To create impactful solutions that bridge technology and real-world problems</p>
+            <hr style="border-color: rgba(255,255,255,0.3); margin: 12px 0;">
+            <h4 style="font-size: 1.1em; margin-bottom: 8px;">💡 Current Focus</h4>
+            <ul class="learning-list">
+              <li>Building scalable enterprise applications</li>
+              <li style="color: green;">Green Humanity</li>
+              <li>Mastering deep in Full-stack</li>
+              <li>Learning Prompt Engineering for more productivity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!--===========================================
@@ -88,7 +168,8 @@
     <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
       <h2 class="w3-text-light-grey text-4xl font-bold mb-4">Ravi Chaudhary</h2>
       <hr class="w3-opacity about-hr">
-      <p class="text-lg leading-relaxed mb-6">I'm Ravi Chaudhary, a dedicated college student pursuing a B.Tech. in
+      <p class="text-lg leading-relaxed mb-6 text-zoomable">I'm Ravi Chaudhary, a dedicated college student pursuing a
+        B.Tech. in
         Computer Science with a specialization
         in AI&ML at <a href="https://liet.in" class="text-blue-400 hover:text-blue-300">LIET</a> in Greater Noida. I'm a
         hardworking and enthusiastic
@@ -98,7 +179,7 @@
           class="text-blue-400 hover:text-blue-300">MyGov</a> and as a Frontend Web Developer intern at <a
           href="https://dreamprovider.in" class="text-blue-400 hover:text-blue-300">Dream Provider</a>.
       </p>
-      <p class="text-lg leading-relaxed mb-8">
+      <p class="text-lg leading-relaxed mb-8 text-zoomable">
         Proficient in both English and Hindi, I'm passionate about engaging in activities, competitions, and internships
         to
         enhance my knowledge and career prospects. Currently, I'm seeking opportunities as a Full-Stack Web Developer,
@@ -124,10 +205,10 @@
           <a href="https://1drv.ms/w/c/75a4b93c1d7f31cf/Ec8xfx08uaQggHVpHgAAAAABSMC7xsM_ZJXLJ_i3AYiZNw?e=rhYco9"
             target="_blank"><i class="fa fa-download mr-2"></i> Download Resume</a>
         </button>
-        <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+        <!-- <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300"
           onclick="this.style.cursor='wait'; validateValue()">
           <i class="fa fa-edit mr-2"></i> Edit Resume
-        </button>
+        </button> -->
       </div>
 
       <!--===========================================
@@ -140,12 +221,14 @@
             <h4 class="text-xl font-bold text-center text-green-500">Major Projects</h4>
           </div>
           <div id="majorList" class="text-white">
+            <a href="javascript:void(0)" onclick="openModal('collegeerp')"
+              class="block p-4 hover:bg-blue-600 text-center transition-colors duration-100">College ERP</a>
+            <a href="javascript:void(0)" onclick="openModal('guestin')"
+              class="block p-4 hover:bg-purple-600 text-center transition-colors duration-100">GuestIN</a>
             <a href="javascript:void(0)" onclick="openModal('bharatDarshanModal')"
               class="block p-4 hover:bg-orange-600 text-center transition-colors duration-100">Bharat Darshan</a>
             <a href="javascript:void(0)" onclick="openModal('greenHumanity')"
               class="block p-4 hover:bg-green-500 text-center transition-colors duration-100">Green Humanity</a>
-            <a href="javascript:void(0)" onclick="openModal('myHealth')"
-              class="block p-4 hover:bg-green-800 text-center transition-colors duration-100">My Health</a>
             <a href="javascript:void(0)" onclick="openModal('constitutionOfIndia')"
               class="block p-4 hover:bg-blue-600 text-center transition-colors duration-100">Constitution of India</a>
           </div>
@@ -159,6 +242,8 @@
             <div class="p-4 hover:bg-gray-900 text-center transition-colors duration-100">Electricity Bill Calculator
             </div>
             <div class="p-4 hover:bg-gray-400 text-center transition-colors duration-100">Calculator</div>
+            <a href="javascript:void(0)" onclick="openModal('myHealth')"
+              class="block p-4 hover:bg-green-800 text-center transition-colors duration-100">My Health</a>
             <div class="p-4 hover:bg-blue-700 text-center transition-colors duration-100">Hostel Provider</div>
             <div class="p-4 hover:bg-gray-700 text-center transition-colors duration-100">iCoder</div>
           </div>
@@ -175,54 +260,317 @@
           <h2 class="text-4xl font-bold mb-4">Skills & Technologies</h2>
           <div class="w-24 h-1 bg-blue-400 mx-auto"></div>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-          <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-            <i class="fab fa-html5 text-4xl text-orange-500 mb-4"></i>
-            <div class="text-gray-300">HTML5</div>
-          </div>
-          <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-            <i class="fab fa-css3-alt text-4xl text-blue-500 mb-4"></i>
-            <div class="text-gray-300">CSS3</div>
-          </div>
-          <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-            <i class="fab fa-react text-4xl text-cyan-400 mb-4"></i>
-            <div class="text-gray-300">React</div>
-          </div>
-          <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-            <i class="fab fa-d text-4xl text-purple-500 mb-4"></i>
-            <div class="text-gray-300">Django</div>
-          </div>
-          <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-            <i class="fas fa-database text-4xl text-green-500 mb-4"></i>
-            <div class="text-gray-300">Mongodb</div>
-          </div>
-          <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-            <i class="fas fa-database text-4xl text-blue-500 mb-4"></i>
-            <div class="text-gray-300">MySqlite</div>
-          </div>
-          <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-            <i class="fab fa-js-square text-4xl text-yellow-500 mb-4"></i>
-            <div class="text-gray-300">JavaScript</div>
-          </div>
-          <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-            <i class="fab fa-python text-4xl text-green-500 mb-4"></i>
-            <div class="text-gray-300">Python</div>
-          </div>
-          <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-            <i class="fab fa-c text-4xl text-blue-500 mb-4"></i>
-            <div class="text-gray-300">C/C++</div>
-          </div>
-          <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-            <i class="fas fa-code text-4xl text-blue-500 mb-4"></i>
-            <div class="text-gray-300">DSA</div>
+        <p class="mb-4">Technologies that I use and have experience with:</p>
+
+        <!-- Frontend Skills -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6">Frontend Development</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fab fa-html5 text-4xl text-orange-500 mb-4"></i>
+              <div class="text-gray-300">HTML5</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fab fa-css3-alt text-4xl text-blue-500 mb-4"></i>
+              <div class="text-gray-300">CSS3</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fab fa-js-square text-4xl text-yellow-500 mb-4"></i>
+              <div class="text-gray-300">JavaScript</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fab fa-react text-4xl text-cyan-400 mb-4"></i>
+              <div class="text-gray-300">React</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fab fa-bootstrap text-4xl text-purple-500 mb-4"></i>
+              <div class="text-gray-300">Bootstrap</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fab fa-sass text-4xl text-pink-500 mb-4"></i>
+              <div class="text-gray-300">Tailwind</div>
+            </div>
           </div>
         </div>
-      </div>
+
+        <!-- Backend Skills -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6">Backend Development</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-server text-4xl text-red-500 mb-4"></i>
+              <div class="text-gray-300">Express</div>
+            </div>
+
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fab fa-python text-4xl text-blue-500 mb-4"></i>
+              <div class="text-gray-300">Django</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Database Skills -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6">Databases</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-database text-4xl text-green-500 mb-4"></i>
+              <div class="text-gray-300">MongoDB</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-database text-4xl text-blue-500 mb-4"></i>
+              <div class="text-gray-300">MySQL</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-database text-4xl text-orange-500 mb-4"></i>
+              <div class="text-gray-300">SQLite</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Programming Languages -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6">Programming Languages</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fab fa-js-square text-4xl text-yellow-500 mb-4"></i>
+              <div class="text-gray-300">JavaScript</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fab fa-python text-4xl text-purple-500 mb-4"></i>
+              <div class="text-gray-300">Python</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-code text-4xl text-blue-500 mb-4"></i>
+              <div class="text-gray-300">C/C++</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-codepen text-4xl text-green-500 mb-4"></i>
+              <div class="text-gray-300">DSA</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools and Others -->
+        <div class="mt-6 mb-12">
+          <h3 class="text-2xl font-bold mb-6">Tools & Others</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fab fa-git-alt text-4xl text-orange-500 mb-4"></i>
+              <div class="text-gray-300">Git</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fab fa-github text-4xl text-gray-300 mb-4"></i>
+              <div class="text-gray-300">GitHub</div>
+            </div>
+
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-search text-4xl text-green-400 mb-4"></i>
+              <div class="text-gray-300">SEO</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- APIs -->
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">API Integration</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-cloud text-4xl text-blue-500 mb-4"></i>
+              <div class="text-gray-300">Weather API</div>
+            </div>
+
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-money text-4xl text-yellow-500 mb-4"></i>
+              <div class="text-gray-300">Payment Gateway API</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-sms text-4xl text-purple-500 mb-4"></i>
+              <div class="text-gray-300">SMS Gateway API</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deployment Section -->
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Deployment & Infrastructure</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-server text-4xl text-orange-500 mb-4"></i>
+              <div class="text-gray-300">AWS EC2</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-balance-scale text-4xl text-blue-500 mb-4"></i>
+              <div class="text-gray-300">AWS Amplify</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-box text-4xl text-yellow-500 mb-4"></i>
+              <div class="text-gray-300">AWS S3</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-database text-4xl text-green-500 mb-4"></i>
+              <div class="text-gray-300">Hostinger</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-cloud text-4xl text-blue-600 mb-4"></i>
+              <div class="text-gray-300">Cloudnery</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Technical Details -->
+        <div class="mt-6 mb-6">
+          <h4 class="text-xl text-white mb-2">Additional Technical Skills</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-mobile-alt text-4xl text-blue-500 mb-4"></i>
+              <div class="text-gray-300">PWA Development</div>
+            </div>
+
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-chart-line text-4xl text-purple-500 mb-4"></i>
+              <div class="text-gray-300">Analytics Tools</div>
+            </div>
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-tablet-alt text-4xl text-red-500 mb-4"></i>
+              <div class="text-gray-300">Responsive Design</div>
+            </div>
+
+            <div class="skill-item text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <i class="fas fa-key text-4xl text-indigo-500 mb-4"></i>
+              <div class="text-gray-300">JWT Auth</div>
+            </div>
+          </div>
+
+        </div>
     </section>
 
-    <!--===========================================
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 certifications-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Certifications</h2>
+          <div class="w-24 h-1 bg-blue-400 mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Web Development Certification -->
+          <div class="certification-card bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-code text-4xl text-green-500 mr-4"></i>
+              <h3 class="text-xl font-bold">Full Stack Development</h3>
+            </div>
+            <p class="text-gray-300 mb-4">Comprehensive training in modern web development technologies and frameworks
+            </p>
+            <div class="flex justify-between items-center text-sm text-gray-400">
+              <span>Issued: Sep 2025</span>
+              <a href="/image/certification/Web Development.pdf" target="_blank"
+                class="text-blue-400 hover:text-blue-300">View Certificate</a>
+            </div>
+          </div>
+
+          <!-- Fundamental Coding and DSA Certification -->
+          <div class="certification-card bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-code text-4xl text-orange-500 mr-4"></i>
+              <h3 class="text-xl font-bold">C/C++ & DSA</h3>
+            </div>
+            <p class="text-gray-300 mb-4">Foundational understanding of Coding concepts and DSA with C and C++</p>
+            <div class="flex justify-between items-center text-sm text-gray-400">
+              <span>Issued: Sep 2024</span>
+              <a href="image/certification/C_CPP_DSA.pdf" target="_blank" class="text-blue-400 hover:text-blue-300">View
+                Certificate</a>
+            </div>
+          </div>
+
+          <!-- IDE Certification -->
+          <div class="certification-card bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-user-graduate text-4xl text-purple-500 mr-4"></i>
+              <h3 class="text-xl font-bold">Innovation, Design, and Entrepreneurship (IDE)</h3>
+            </div>
+            <p class="text-gray-300 mb-4">Comprehensive database design and management with SQL and NoSQL</p>
+            <div class="flex justify-between items-center text-sm text-gray-400">
+              <span>Issued: Feb 2024</span>
+              <a href="image/certification/IDE.pdf" target="_blank" class="text-blue-400 hover:text-blue-300">View
+                Certificate</a>
+            </div>
+          </div>
+
+          <!-- SIH Certification -->
+          <div class="certification-card bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-user-secret text-4xl text-blue-400 mr-4"></i>
+              <h3 class="text-xl font-bold">Smart Inida Hackathon</h3>
+            </div>
+            <p class="text-gray-300 mb-4">Created a solution for Smart India Hackathon national challenges for PS1436
+              with Green Humanity </p>
+            <div class="flex justify-between items-center text-sm text-gray-400">
+              <span>Issued: Dec 2023</span>
+              <a href="image/certification/SIH.pdf" target="_blank" class="text-blue-400 hover:text-blue-300">View
+                Certificate</a>
+            </div>
+          </div>
+
+          <!-- Google Cloud Computing Foundations Certification -->
+          <div class="certification-card bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
+            <div class="flex items-center mb-4">
+              <i class="fab fa-google text-4xl text-yellow-500 mr-4"></i>
+              <h3 class="text-xl font-bold">Google Cloud Computing Foundations</h3>
+            </div>
+            <p class="text-gray-300 mb-4">Google Cloud Computing Foundation by NPTEL</p>
+            <div class="flex justify-between items-center text-sm text-gray-400">
+              <span>Issued: Oct 2023</span>
+              <a href="image/certification/Google cloud NPTEL.pdf" class="text-blue-400 hover:text-blue-300">View
+                Certificate</a>
+            </div>
+          </div>
+
+          <!-- Google Cloud Computing Foundations Certification -->
+          <div class="certification-card bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
+            <div class="flex items-center mb-4">
+              <i class="fab fa-codepen text-4xl text-yellow-500 mr-4"></i>
+              <h3 class="text-xl font-bold">Solve for Tomorrow</h3>
+            </div>
+            <p class="text-gray-300 mb-4">An Innovation challenge by Samsung</p>
+            <div class="flex justify-between items-center text-sm text-gray-400">
+              <span>Issued: 2023</span>
+              <a href="image/certification/Solve for tomorrow.pdf" target="_blank"
+                class="text-blue-400 hover:text-blue-300">View Certificate</a>
+            </div>
+          </div>
+
+          <!-- Azure Certification -->
+          <div class="certification-card bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
+            <div class="flex items-center mb-4">
+              <i class="fab fa-python text-4xl text-blue-500 mr-4"></i>
+              <h3 class="text-xl font-bold">Azure</h3>
+            </div>
+            <p class="text-gray-300 mb-4">Azure fundamentals</p>
+            <p class="text-gray-300 mb-4">Discuss Azure fundamental Concept</p>
+            <div class="flex justify-between items-center text-sm text-gray-400">
+              <div class="flex justify-between items-center text-sm text-gray-400">
+                <div>
+                  <span>Issued: Dec 2022</span>
+                  <a href="image/certification/Azure fundamental concepts.pdf" target="_blank"
+                    class="text-blue-400 hover:text-blue-300">View Certificate</a>
+                </div>
+                <div>
+                  <span>Issued: Dec 2022</span>
+                  <a href="image/certification/Azure Fundamentals.pdf" target="_blank"
+                    class="text-blue-400 hover:text-blue-300">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section> <!-- ===========================================
       EXPERIENCE SECTION
-    ===========================================-->
+    =========================================== -->
     <!-- My Experience -->
     <h3 class="w3-padding-24 w3-text-light-grey experience-title">My Experience</h3>
 
@@ -290,8 +638,10 @@
     <hr style="width:200px" class="w3-opacity">
 
     <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-red w3-xxlarge w3-margin-right hover:bg-red-800"></i> New Delhi, India</p>
-      <p><i class="fa fa-phone fa-fw w3-text-green w3-xxlarge w3-margin-right hover:bg-gray-200"></i> Phone: +91 9580156837</p>
+      <p><i class="fa fa-map-marker fa-fw w3-text-red w3-xxlarge w3-margin-right hover:bg-red-800"></i> New Delhi, India
+      </p>
+      <p><i class="fa fa-phone fa-fw w3-text-green w3-xxlarge w3-margin-right hover:bg-gray-200"></i> Phone: +91
+        9580156837</p>
       <a href="https://linkedin.com/in/ravichaudhary9580" target="_blank">
         <p><i class="fa fa-linkedin fa-fw w3-text-white w3-xxlarge w3-margin-right hover:bg-blue-800"> </i> LinkedIn</p>
       </a>
@@ -328,6 +678,10 @@
 
     <p class="w3-medium">Powered by GitHub Pages</p>
     <p class="w3-small">Crafted by dev.ravi</p>
+    <!-- Add this div where you want to display the counter (e.g. in the footer section) -->
+    <div class="w3-text-grey text-center mt-4">
+      <p>Page Visits: <span id="visitCounter">0</span></p>
+    </div>
     <!-- End footer -->
   </footer>
 
@@ -343,13 +697,16 @@
     <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
       <div class="p-6">
         <div class="flex justify-between items-center mb-6">
-          <h2 class="text-2xl font-bold text-orange-500">Bharat Darshan Project</h2>
+          <h2 class="text-2xl font-bold text-orange-500">Bharat Darshan</h2>
           <button onclick="closeModal('bharatDarshanModal')" class="text-gray-400 hover:text-white text-2xl">
             <i class="fas fa-times"></i>
           </button>
         </div>
         <div class="slideshow-container relative" data-modal="bharatDarshanModal">
-          <div class="slides">
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/0.png" alt="Combined 0" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
             <img src="image/mywork/Bharatdarshan/1.png" alt="Screenshot 1" class="w-full h-auto rounded-lg">
           </div>
           <div class="slides hidden">
@@ -380,27 +737,190 @@
           </div>
           <div class="slides hidden">
             <img src="image/mywork/Bharatdarshan/8.png" alt="Screenshot 8"
-              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              style="width:auto; height:75%; object-fit:contain; display:block; margin:0 auto;"
               class="w-full h-auto rounded-lg">
           </div>
           <div class="slides hidden">
             <img src="image/mywork/Bharatdarshan/9.png" alt="Screenshot 9"
+              style="width:auto; height:75%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/10.png" alt="Screenshot 10"
+              style="width:auto; height:75%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/11.png" alt="Screenshot 11"
+              style="width:auto; height:75%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/12.png" alt="Screenshot 12"
+              style="width:auto; height:75%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/13.png" alt="Screenshot 13"
+              style="width:auto; height:75%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/14.png" alt="Screenshot 14"
+              style="width:auto; height:75%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/15.png" alt="Screenshot 15"
+              style="width:auto; height:75%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/16.png" alt="Screenshot 16"
+              style="width:auto; height:75%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/17.png" alt="Screenshot 17"
+              style="width:auto; height:75%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/18.png" alt="Screenshot 18"
+              style="width:auto; height:75%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/19.png" alt="Screenshot 19"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/20.png" alt="Screenshot 20"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/21.png" alt="Screenshot 21"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/Bharatdarshan/22.png" alt="Screenshot 22"
               style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
               class="w-full h-auto rounded-lg">
           </div>
           <button onclick="changeSlide(-1, 'bharatDarshanModal')"
-            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-1000">
             <i class="fas fa-chevron-left"></i>
           </button>
           <button onclick="changeSlide(1, 'bharatDarshanModal')"
-            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-1000">
             <i class="fas fa-chevron-right"></i>
           </button>
         </div>
       </div>
+      <br>
+      <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] p-6">
+        <h3 class="text-2xl font-bold text-green-500 mb-4">Project Details</h3>
+
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Description</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Bharat Darshan is your digital travel companion for discovering India’s heritage, culture, and spirituality.
+            Plan trips across every region — from ancient temples and sacred rivers to adventure trails and historical
+            landmarks. Whether you’re a student explorer or a pilgrim, Bharat Darshan connects you to authentic
+            experiences, routes, and destinations across India.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside text-gray-300 space-y-2">
+            <li>Explore Trips</li>
+            <li>Hassle-Free Bookings</li>
+            <li>User Accounts & Profiles</li>
+            <li>Progressive Web App (PWA) Experience</li>
+            <li>Admin & Content Management Panel</li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Technical Specifications</h4>
+          <div class="grid grid-cols-2 gap-4 text-gray-300">
+            <div>
+              <p class="font-semibold">Frontend:</p>
+              <ul class="list-disc list-inside">
+                <li>JavaScript</li>
+                <li>Tailwind CSS</li>
+                <li>HTML</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Backend:</p>
+              <ul class="list-disc list-inside">
+                <li>App Script</li>
+                <li>Google Sheet</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Deployment:</p>
+              <ul class="list-disc list-inside">
+                <li>AWS Amplify</li>
+                <li><a href="https://ravichaudhary9580.github.io/Bharat-Darshan/" target="_blank">GitHub Pages</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Other Tools:</p>
+              <ul class="list-disc list-inside">
+                <li>Build -- Bubble Wrap</li>
+                <li>GitHub</li>
+                <li>Git</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xl text-white mb-2">Project Links</h4>
+          <div class="flex space-x-4 " style="padding-bottom: 15px;">
+            <a href="https://github.com/ravichaudhary9580/Bharat-Darshan" target="_blank"
+              class="text-blue-400 hover:text-blue-300 flex items-center">
+              <i class="fab fa-github mr-2"></i>
+              GitHub Repository
+            </a>
+            <a href="https://bharatdarshan.live/" target="_blank"
+              class="text-blue-400 hover:text-blue-300 flex items-center">
+              <i class="fas fa-globe mr-2"></i>
+              Website
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.bharatdarshan.travel" target="_blank"
+              class="text-blue-400 hover:text-blue-300 flex items-center">
+              <i class="fab fa-google-play mr-2"></i>
+              Playstore
+            </a>
+
+          </div>
+        </div>
+        <!-- My Learning Section -->
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">My Learnings</h4>
+          <div class="bg-gray-800 rounded-lg p-6">
+            <ul class="list-disc list-inside text-gray-300 space-y-3">
+              <li>Learned how to publish a APP on play store</li>
+              <li>Learned to deploy and maintain a production web application</li>
+              <li>Gained more experience in JavaScript</li>
+              <li>Explored Lot of Hosting Provider</li>
+              <li>Developed skills in responsive UI design using Tailwind CSS and CSS</li>
+              <li>Practiced API integration and handling real-time data updates</li>
+              <li>Improved project planning and development methods</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
-
 
   <div id="greenHumanity"
     class="modal fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
@@ -412,9 +932,9 @@
             <i class="fas fa-times"></i>
           </button>
         </div>
-        <div class="slideshow-container relative" data-modal="greenHumanity">
+        <div class="slideshow-container relative" data-modal="myHealth">
           <div class="slides">
-            <img src="image/mywork/greenHumanity/1.png" alt="Screenshot 1" class="w-full h-auto rounded-lg">
+            <img src="image/mywork/greenHumanity/1.png" alt="Screenshot 1" class="w-full h-100% rounded-lg">
           </div>
           <div class="slides hidden">
             <img src="image/mywork/greenHumanity/2.png" alt="Screenshot 2" class="w-full h-auto rounded-lg">
@@ -444,32 +964,183 @@
           </div>
           <div class="slides hidden">
             <img src="image/mywork/greenHumanity/8.png" alt="Screenshot 8"
-              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
-              class="w-full h-auto rounded-lg">
+              style="width:auto; height:100%;  display:block; margin:auto;" class="w-full h-auto rounded-lg">
           </div>
           <div class="slides hidden">
             <img src="image/mywork/greenHumanity/9.png" alt="Screenshot 9"
+              style="width:auto; height:auto; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-100% rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/10.png" alt="Screenshot 10"
+              style=" height:60%;  object-fit:contain; display:block; margin:0 auto;" class="h-60 rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/11.png" alt="Screenshot 11"
               style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
               class="w-full h-auto rounded-lg">
           </div>
           <div class="slides hidden">
-            <img src="image/mywork/greenHumanity/10.png" alt="Screenshot 10"
+            <img src="image/mywork/greenHumanity/12.png" alt="Screenshot 12"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/13.png" alt="Screenshot 13"
+              style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
+              class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/greenHumanity/14.png" alt="Screenshot 14"
               style="width:auto; height:100%; object-fit:contain; display:block; margin:0 auto;"
               class="w-full h-auto rounded-lg">
           </div>
           <button onclick="changeSlide(-1, 'greenHumanity')"
-            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
             <i class="fas fa-chevron-left"></i>
           </button>
           <button onclick="changeSlide(1, 'greenHumanity')"
-            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
             <i class="fas fa-chevron-right"></i>
           </button>
         </div>
       </div>
+      <br>
+      <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] p-6">
+        <h3 class="text-2xl font-bold text-green-500 mb-4">Project Details</h3>
+
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-4">Description</h4>
+          <div class="space-y-6">
+            <p class="text-gray-300 leading-relaxed text-justify">
+              Project Green Humanity is dedicated to ensuring the profitability and environmental sustainability of
+              agriculture both today and in the future. We recognize the critical role that farmers play in providing
+              food
+              security for the world, yet they often face significant risks and uncertainties on their own.
+            </p>
+            <p class="text-gray-300 leading-relaxed text-justify">
+              Farmers are left to navigate numerous unknowns, starting from pre-sowing factors such as unpredictable
+              weather conditions, the selection of productive seeds, optimal irrigation practices, and the availability
+              of
+              dependable crop insurance. These challenges extend to post-harvest storage methods and the fluctuating
+              market prices they must contend with.
+            </p>
+            <p class="text-gray-300 leading-relaxed text-justify">
+              In Green Humanity, I firmly believe that addressing these challenges in isolation is not the way forward.
+              Instead, i aim to connect the dots at an ecosystem level and develop comprehensive, full-stack solutions
+              at
+              every stage of the crop cycle.
+            </p>
+
+            <div class="mt-8">
+              <h2 class="text-2xl font-semibold text-green-400 mb-4">Resource Provision for Farmers</h2>
+              <p class="text-gray-300 leading-relaxed text-justify">
+                Our platform provides essential resources to farmers, ensuring they have access to the tools and
+                knowledge
+                needed to thrive in the agriculture sector.
+              </p>
+              <p class="text-gray-300 leading-relaxed text-justify">
+                We offer the option for farmers to rent fields for crop cultivation, making it easier for them to
+                maintain
+                and sow crops efficiently.
+              </p>
+            </div>
+
+            <div class="mt-8">
+              <h2 class="text-2xl font-semibold text-green-400 mb-4">Revenue Generation for Farmers</h2>
+              <h3 class="text-xl font-medium text-green-300 mb-3">Field Rental Services</h3>
+              <p class="text-gray-300 leading-relaxed text-justify">
+                Project Green Humanity is committed to helping farmers generate income through sustainable agricultural
+                practices, thereby improving their financial stability.
+              </p>
+
+              <h3 class="text-xl font-medium text-green-300 mt-6 mb-3">Skilled Team</h3>
+              <p class="text-gray-300 leading-relaxed text-justify">
+                We have a dedicated and skilled team working relentlessly to support and assist farmers in overcoming
+                the
+                challenges they face in modern agriculture.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside text-gray-300 space-y-2">
+            <li>Fragmentation of Land</li>
+            <li>Subsistence Farming</li>
+            <li>Bataiyan System</li>
+            <li>Inadequate availability of water resources.</li>
+          </ul>
+        </div>
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Technical Specifications</h4>
+          <div class="grid grid-cols-2 gap-4 text-gray-300">
+            <div>
+              <p class="font-semibold">Frontend:</p>
+              <ul class="list-disc list-inside">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Tailwind CSS</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Backend:</p>
+              <ul class="list-disc list-inside">
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>MongoDB</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Deployment:</p>
+              <ul class="list-disc list-inside">
+                <li>EC 2</li>
+                <li>MongoDB Atlas</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Other Tools:</p>
+              <ul class="list-disc list-inside">
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>VS Code</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xl text-white mb-2">Project Links</h4>
+          <div class="flex space-x-4 " style="padding-bottom: 15px;">
+            <a href="/image/mywork/greenHumanity/GREEN HUMANITY.pdf" target="_blank"
+              class="text-blue-400 hover:text-blue-300 flex items-center">
+              <i class="fab fa-r-project mr-2"></i>
+              Project Research
+            </a>
+            <a href="https://github.com/ravichaudhary9580/Green-Humanity-2023" target="_blank"
+              class="text-blue-400 hover:text-blue-300 flex items-center">
+              <i class="fab fa-github mr-2"></i>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <!-- My Learning Section -->
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">My Learnings</h4>
+          <div class="bg-gray-800 rounded-lg p-6">
+            <ul class="list-disc list-inside text-gray-300 space-y-3">
+              <li>Started learnning the MERN stack (MongoDB, Express, React, Node.js)</li>
+              <li>Project Planning</li>
+              <li>Ground Research</li>
+              <li>Public Speaking</li>
+              <li>Team building</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
 
   <div id="myHealth"
     class="modal fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
@@ -527,11 +1198,11 @@
               class="w-full h-auto rounded-lg">
           </div>
           <button onclick="changeSlide(-1, 'myHealth')"
-            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
             <i class="fas fa-chevron-left"></i>
           </button>
           <button onclick="changeSlide(1, 'myHealth')"
-            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
             <i class="fas fa-chevron-right"></i>
           </button>
         </div>
@@ -598,8 +1269,78 @@
         </div>
       </div>
     </div>
-    <!-- External JavaScript File -->
-    <script src="script.js"></script>
+  </div>
+
+  <div id="constitutionOfIndia"
+    class="modal fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
+    <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold text-blue-500">Constitution of India</h2>
+          <button onclick="closeModal('constitutionOfIndia')" class="text-gray-400 hover:text-white text-2xl">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] p-6">
+          <h3 class="text-2xl font-bold text-blue-500 mb-4">Project Details</h3>
+
+          <div class="mb-6">
+            <h4 class="text-xl text-white mb-2">Description</h4>
+            <p class="text-gray-300 leading-relaxed">
+              A comprehensive digital platform dedicated to the Constitution of India, providing easy access to
+              constitutional articles, amendments, and fundamental rights. This project aims to educate citizens about
+              their constitutional rights and the democratic framework of India.
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="text-xl text-white mb-2">Key Features</h4>
+            <ul class="list-disc list-inside text-gray-300 space-y-2">
+              <li>Complete text of the Constitution of India</li>
+              <li>Search functionality for articles and amendments</li>
+              <li>Interactive navigation through Parts and Schedules</li>
+              <li>Educational resources about fundamental rights and duties</li>
+              <li>Historical context and amendments timeline</li>
+            </ul>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="text-xl text-white mb-2">Technical Specifications</h4>
+            <div class="grid grid-cols-2 gap-4 text-gray-300">
+              <div>
+                <p class="font-semibold">Frontend:</p>
+                <ul class="list-disc list-inside">
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold">Backend:</p>
+                <ul class="list-disc list-inside">
+                  <li>Node.js</li>
+                  <li>Express</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl text-white mb-2">Project Links</h4>
+            <div class="flex space-x-4" style="padding-bottom: 15px;">
+              <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                <i class="fab fa-github mr-2"></i>
+                GitHub Repository
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JavaScript File -->
+  <script src="script.js"></script>
 </body>
 
 </html>

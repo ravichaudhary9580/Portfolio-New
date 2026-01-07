@@ -139,6 +139,12 @@ body, h1, h2, h3, h4, h5, h6 {
 /*-------------------------------------------
   MODAL SECTION
 -------------------------------------------*/
+/* Prevent scrolling when modal is open */
+body.modal-open,
+html.modal-open {
+  overflow: hidden !important;
+}
+
 /* Modal image styling */
 .modal-image-contain {
   width: auto;
@@ -149,6 +155,479 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 /*-------------------------------------------
+  INTERACTIVE IMAGE REGIONS
+-------------------------------------------*/
+.interactive-image-container {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.interactive-image-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.hover-region {
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+/* Region positioning - adjust percentages based on image areas */
+.region-head {
+  top: 5%;
+  left: 30%;
+  width: 40%;
+  height: 20%;
+}
+
+.region-upper {
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 25%;
+}
+
+.region-lower {
+  top: 50%;
+  left: 25%;
+  width: 50%;
+  height: 30%;
+}
+
+.region-left {
+  top: 20%;
+  left: 5%;
+  width: 20%;
+  height: 60%;
+}
+
+.region-right {
+  top: 20%;
+  right: 5%;
+  width: 20%;
+  height: 60%;
+}
+
+.region-center {
+  top: 80%;
+  left: 10%;
+  width: 80%;
+  height: 20%;
+}
+
+/* Visual feedback on hover */
+.hover-region:hover {
+  background-color: rgba(66, 153, 225, 0.1);
+  border: 2px solid rgba(66, 153, 225, 0.5);
+  border-radius: 10px;
+}
+
+/* Hover card styling */
+.hover-card {
+  position: absolute;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  min-width: 280px;
+  max-width: 350px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.95);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.hover-region:hover .hover-card {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Card positioning based on region */
+.region-head .hover-card {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px) scale(0.95);
+}
+
+.region-head:hover .hover-card {
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.region-upper .hover-card {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px) scale(0.95);
+  margin-top: 10px;
+}
+
+.region-upper:hover .hover-card {
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.region-lower .hover-card {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px) scale(0.95);
+  margin-bottom: 10px;
+}
+
+.region-lower:hover .hover-card {
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.region-left .hover-card {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%) translateX(-10px) scale(0.95);
+  margin-left: 15px;
+}
+
+.region-left:hover .hover-card {
+  transform: translateY(-50%) translateX(0) scale(1);
+}
+
+.region-right .hover-card {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%) translateX(10px) scale(0.95);
+  margin-right: 15px;
+}
+
+.region-right:hover .hover-card {
+  transform: translateY(-50%) translateX(0) scale(1);
+}
+
+.region-center .hover-card {
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px) scale(0.95);
+  margin-bottom: 15px;
+}
+
+.region-center:hover .hover-card {
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Card content styling */
+.hover-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.3em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.hover-card p {
+  margin: 10px 0;
+  font-size: 0.95em;
+  line-height: 1.6;
+  text-align: center;
+  font-style: italic;
+}
+
+.hover-card .author {
+  display: block;
+  font-size: 0.85em;
+  text-align: right;
+  margin-top: 8px;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+.tech-badges {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.tech-badges .badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.learning-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.learning-list li {
+  padding: 6px 0;
+  font-size: 0.9em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.learning-list li:last-child {
+  border-bottom: none;
+}
+
+.learning-list li:before {
+  content: "✓ ";
+  color: #4ade80;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.achievement {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 1.1em;
+  backdrop-filter: blur(10px);
+}
+
+/* Glow effect animation */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+  }
+  50% {
+    box-shadow: 0 10px 60px rgba(118, 75, 162, 0.6);
+  }
+}
+
+.hover-region:hover .hover-card {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Ripple effect on click */
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  animation: ripple 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+/* Active region state */
+.active-region {
+  background-color: rgba(66, 153, 225, 0.15) !important;
+}
+
+/*-------------------------------------------
+  TEXT MAGNIFYING LENS
+-------------------------------------------*/
+.text-zoomable {
+  cursor: help;
+  position: relative;
+}
+
+.text-lens {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #4299e1;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 0 30px rgba(66, 153, 225, 0.6), inset 0 0 20px rgba(66, 153, 225, 0.3);
+  overflow: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.text-lens.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.text-lens.active {
+  display: block;
+  opacity: 1;
+}
+
+.lens-content {
+  position: absolute;
+  color: white;
+  font-size: 1.8em;
+  line-height: 1.6;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  word-wrap: break-word;
+}
+
+/* Lens glow animation */
+@keyframes lensGlow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(66, 153, 225, 0.6), inset 0 0 20px rgba(66, 153, 225, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(66, 153, 225, 0.8), inset 0 0 30px rgba(66, 153, 225, 0.5);
+  }
+}
+
+.text-lens.active {
+  animation: lensGlow 2s ease-in-out infinite;
+}
+
+/* Hint for users */
+.text-zoomable::before {
+  content: '🔍';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 0.8em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.text-zoomable:hover::before {
+  opacity: 0.6;
+}
+
+/* Focus state for accessibility */
+.hover-region:focus {
+  outline: 3px solid #4299e1;
+  outline-offset: 2px;
+}
+
+/* Brain Zoom Animation */
+.brain-zoom-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.98) 100%);
+  z-index: 1500;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.brain-zoom-container.hidden {
+  display: none;
+}
+
+.brain-zoom-container.active {
+  display: flex;
+  animation: fadeInBackground 0.5s ease-in;
+}
+
+.brain-visual {
+  position: relative;
+  margin-top: 50%;
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.brain-zoom-container.active .brain-visual {
+  animation: brainZoomIn 2s ease-out forwards;
+}
+
+.brain-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: brightness(1.2) contrast(1.3) saturate(1.5);
+  box-shadow: 0 0 50px rgba(102, 126, 234, 0.8), 0 0 100px rgba(118, 75, 162, 0.6);
+}
+
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes brainZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(0deg);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.5) rotate(10deg);
+  }
+  50% {
+    transform: scale(2) rotate(-5deg);
+  }
+  70% {
+    transform: scale(2) rotate(5deg);
+  }
+  85% {
+    transform: scale(2.5) rotate(-3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(3) rotate(0deg);
+  }
+}
+
+/* Pulsing effect during zoom */
+.brain-visual::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/*-------------------------------------------
   RESPONSIVE DESIGN
 -------------------------------------------*/
 /* Remove sidebar margin on mobile devices */
@@ -156,4 +635,125 @@ body, h1, h2, h3, h4, h5, h6 {
   #main {
     margin-left: 0;
   }
+  
+  /* Adjust interactive regions for mobile */
+  .hover-card {
+    min-width: 220px;
+    max-width: 280px;
+    padding: 15px;
+    font-size: 0.9em;
+  }
+  
+  .hover-card h3 {
+    font-size: 1.1em;
+  }
+  
+  /* Adjust card positions for smaller screens */
+  .region-left .hover-card,
+  .region-right .hover-card {
+    left: 50%;
+    right: auto;
+    top: 100%;
+    transform: translateX(-50%) translateY(-10px) scale(0.95);
+    margin: 10px 0 0 0;
+  }
+  
+  .region-left:hover .hover-card,
+  .region-right:hover .hover-card {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/*-------------------------------------------
+  ZOOM MAGNIFIER LENS
+-------------------------------------------*/
+.text-zoomable {
+  cursor: zoom-in;
+  position: relative;
+}
+
+.zoom-lens {
+  position: fixed;
+  width: 250px;
+  height: 250px;
+  border: 4px solid #667eea;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  overflow: hidden;
+  box-shadow: 
+    0 0 0 4px rgba(102, 126, 234, 0.3),
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    inset 0 0 50px rgba(255, 255, 255, 0.1);
+  background: rgb(3, 3, 3);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.zoom-lens.active {
+  opacity: 1;
+}
+
+.zoom-lens-content {
+  position: absolute;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+
+/* Glass reflection effect */
+.zoom-lens::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(ellipse at top left, 
+    rgba(255, 255, 255, 0.6) 0%, 
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Lens glow animation */
+@keyframes lensGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 0 4px rgba(102, 126, 234, 0.3),
+      0 10px 40px rgba(0, 0, 0, 0.5),
+      inset 0 0 50px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 4px rgba(102, 126, 234, 0.6),
+      0 10px 60px rgba(102, 126, 234, 0.4),
+      inset 0 0 50px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.zoom-lens.active {
+  animation: lensGlow 2s ease-in-out infinite;
+}
+
+/* Zoom indicator */
+.text-zoomable::before {
+  content: 'Zoom';
+  position: absolute;
+  top: -25px;
+  right: 5px;
+  font-size: 0.7em;
+  background: rgba(102, 126, 234, 0.9);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.text-zoomable:hover::before {
+  opacity: 1;
 }

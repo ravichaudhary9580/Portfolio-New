@@ -93,6 +93,8 @@ function showSlides(n, modalId) {
 // Initialize slides for each modal when opened
 function openModal(modalId) {
   document.getElementById(modalId).classList.remove('hidden');
+  document.documentElement.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
   slideIndices[modalId] = 1;
   showSlides(1, modalId);
 }
@@ -100,6 +102,8 @@ function openModal(modalId) {
 // Close modal function
 function closeModal(modalId) {
   document.getElementById(modalId).classList.add('hidden');
+  document.documentElement.style.overflow = '';
+  document.body.style.overflow = '';
 }
 
 // Initialize slide indices when page loads
@@ -195,3 +199,204 @@ function submitForm(e) {
     })
     .catch(error => console.error('Error!', error.message))
 }
+
+/*-------------------------------------------
+  INTERACTIVE IMAGE REGIONS
+-------------------------------------------*/
+// Enhanced interactive functionality for image hover regions
+document.addEventListener('DOMContentLoaded', function() {
+  const hoverRegions = document.querySelectorAll('.hover-region');
+  let hoverTimer = null;
+  let brainAnimationPlayed = false;
+  
+  hoverRegions.forEach(region => {
+    // Add ripple effect on click
+    region.addEventListener('click', function(e) {
+      const ripple = document.createElement('div');
+      ripple.className = 'ripple-effect';
+      ripple.style.left = e.offsetX + 'px';
+      ripple.style.top = e.offsetY + 'px';
+      this.appendChild(ripple);
+      
+      setTimeout(() => ripple.remove(), 600);
+    });
+    
+    // Track hover analytics (optional)
+    region.addEventListener('mouseenter', function() {
+      const regionName = this.dataset.region;
+      console.log(`User hovering over: ${regionName}`);
+      
+      // Add active state
+      this.classList.add('active-region');
+      
+      // Special handling for head region - trigger brain zoom after 3 seconds
+      if (regionName === 'head' && !brainAnimationPlayed) {
+        hoverTimer = setTimeout(() => {
+          const brainContainer = this.querySelector('.brain-zoom-container');
+          if (brainContainer) {
+            brainContainer.classList.remove('hidden');
+            brainContainer.classList.add('active');
+            brainAnimationPlayed = true;
+            
+            // Hide the hover card when brain animation starts
+            const hoverCard = this.querySelector('.hover-card');
+            if (hoverCard) {
+              hoverCard.style.opacity = '0';
+              hoverCard.style.visibility = 'hidden';
+            }
+            
+            // Reset after animation completes (2 seconds animation + 0.5s extra)
+            setTimeout(() => {
+              brainContainer.classList.remove('active');
+              brainContainer.classList.add('hidden');
+              if (hoverCard) {
+                hoverCard.style.opacity = '';
+                hoverCard.style.visibility = '';
+              }
+              brainAnimationPlayed = false;
+            }, 8000);
+          }
+        }, 1500); // 3 seconds
+      }
+    });
+    
+    region.addEventListener('mouseleave', function() {
+      // Remove active state
+      this.classList.remove('active-region');
+      
+      // Clear hover timer if user leaves before 3 seconds
+      if (hoverTimer) {
+        clearTimeout(hoverTimer);
+        hoverTimer = null;
+      }
+    });
+    
+    // Accessibility: keyboard navigation support
+    region.setAttribute('tabindex', '0');
+    region.setAttribute('role', 'button');
+    region.setAttribute('aria-label', `Interactive region: ${region.dataset.region}`);
+    
+    region.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const card = this.querySelector('.hover-card');
+        if (card) {
+          card.style.opacity = card.style.opacity === '1' ? '0' : '1';
+          card.style.visibility = card.style.visibility === 'visible' ? 'hidden' : 'visible';
+        }
+      }
+    });
+  });
+  
+  // Add smooth scroll behavior when cards appear
+  const interactiveContainer = document.querySelector('.interactive-image-container');
+  if (interactiveContainer) {
+    interactiveContainer.addEventListener('mouseenter', function() {
+      document.body.style.scrollBehavior = 'smooth';
+    });
+  }
+});
+
+// Optional: Add card color variations based on region
+function setRegionTheme(region, colors) {
+  const regionElement = document.querySelector(`.region-${region} .hover-card`);
+  if (regionElement && colors) {
+    regionElement.style.background = `linear-gradient(135deg, ${colors.start} 0%, ${colors.end} 100%)`;
+  }
+}
+
+// Apply custom themes (optional customization)
+document.addEventListener('DOMContentLoaded', function() {
+  setRegionTheme('head', { start: '#667eea', end: '#764ba2' });
+  setRegionTheme('upper', { start: '#f093fb', end: '#f5576c' });
+  setRegionTheme('lower', { start: '#4facfe', end: '#00f2fe' });
+  setRegionTheme('left', { start: '#43e97b', end: '#38f9d7' });
+  setRegionTheme('right', { start: '#fa709a', end: '#fee140' });
+  setRegionTheme('center', { start: '#ff6b6b', end: '#feca57' });
+});
+
+/*-------------------------------------------
+  ZOOM MAGNIFIER LENS
+-------------------------------------------*/
+document.addEventListener('DOMContentLoaded', function() {
+  // Create zoom lens element
+  const zoomLens = document.createElement('div');
+  zoomLens.className = 'zoom-lens';
+  const zoomContent = document.createElement('div');
+  zoomContent.className = 'zoom-lens-content';
+  zoomLens.appendChild(zoomContent);
+  document.body.appendChild(zoomLens);
+  
+  const zoomableElements = document.querySelectorAll('.text-zoomable');
+  const zoomFactor = 2.5; // Magnification level
+  const lensSize = 250;
+  
+  zoomableElements.forEach(element => {
+    element.addEventListener('mouseenter', function() {
+      zoomLens.classList.add('active');
+    });
+    
+    element.addEventListener('mousemove', function(e) {
+      // Position lens at cursor
+      const x = e.clientX - lensSize / 2;
+      const y = e.clientY - lensSize / 2;
+      
+      zoomLens.style.left = x + 'px';
+      zoomLens.style.top = y + 'px';
+      
+      // Calculate the position within the element
+      const rect = element.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const offsetY = e.clientY - rect.top;
+      
+      // Clone the element if not already done
+      if (!zoomContent.firstChild) {
+        const clone = element.cloneNode(true);
+        clone.style.position = 'absolute';
+        clone.style.left = '0';
+        clone.style.top = '0';
+        clone.style.width = element.offsetWidth + 'px';
+        clone.style.height = element.offsetHeight + 'px';
+        zoomContent.appendChild(clone);
+      }
+      
+      // Calculate the position to show in the lens (centered on cursor)
+      const moveX = -(offsetX * zoomFactor - lensSize / 2);
+      const moveY = -(offsetY * zoomFactor - lensSize / 2);
+      
+      // Apply zoom transformation
+      zoomContent.style.transform = `scale(${zoomFactor}) translate(${moveX / zoomFactor}px, ${moveY / zoomFactor}px)`;
+      zoomContent.style.width = element.offsetWidth + 'px';
+      zoomContent.style.height = element.offsetHeight + 'px';
+    });
+    
+    element.addEventListener('mouseleave', function() {
+      zoomLens.classList.remove('active');
+      // Clear the cloned content
+      while (zoomContent.firstChild) {
+        zoomContent.removeChild(zoomContent.firstChild);
+      }
+    });
+  });
+});
+
+/*-------------------------------------------
+  VISIT COUNTER
+-------------------------------------------*/
+// Function to increment and display visit count
+function updateVisitCount() {
+  // Get current count from localStorage
+  let visits = localStorage.getItem('pageVisits');
+
+  // If first visit, initialize to 1, otherwise increment
+  visits = visits ? parseInt(visits) + 1 : 1;
+
+  // Store updated count
+  localStorage.setItem('pageVisits', visits);
+
+  // Update display
+  document.getElementById('visitCounter').textContent = visits;
+}
+
+// Call function when page loads
+window.addEventListener('load', updateVisitCount);
