@@ -64,7 +64,8 @@
       <a href="#about" class="w3-bar-item w3-button nav-about p-0 m-0">ABOUT</a>
       <a href="#photos" class="w3-bar-item w3-button nav-photos p-0 m-0">PHOTOS</a>
       <a href="#contact" class="w3-bar-item w3-button nav-contact p-0 m-0">CONTACT</a>
-      <a href="#" class="w3-bar-item w3-button nav-books p-0 m-0" style="padding-left: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px;">BOOKS</a>
+      <a href="#" class="w3-bar-item w3-button nav-books p-0 m-0"
+        style="padding-left: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px;">BOOKS</a>
     </div>
   </div>
 
@@ -737,12 +738,237 @@
   </footer>
 
   <!-- END PAGE CONTENT -->
-  </div>
 
   <!--===========================================
     MODAL SECTION
   ===========================================-->
   <!-- Project Modal -->
+
+  <!-- College ERP Modal -->
+  <div id="collegeerp"
+    class="modal fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
+    <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold text-orange-500">College ERP</h2>
+          <button onclick="closeModal('collegeerp')" class="text-gray-400 hover:text-white text-2xl">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="slideshow-container relative" data-modal="collegeerp">
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/1.png" alt="Screenshot 1" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/2.png" alt="Screenshot 2" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/3.png" alt="Screenshot 3" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/4.png" alt="Screenshot 4" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/5.png" alt="Screenshot 5" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/6.png" alt="Screenshot 6" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/7.png" alt="Screenshot 7" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/8.png" alt="Screenshot 8" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/9.png" alt="Screenshot 9" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/10.png" alt="Screenshot 10" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/11.png" alt="Screenshot 11" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/12.png" alt="Screenshot 12" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/13.png" alt="Screenshot 13" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/14.png" alt="Screenshot 14" class="w-full h-auto rounded-lg">
+          </div>
+          <div class="slides hidden">
+            <img src="image/mywork/collegeErp/15.png" alt="Screenshot 15" class="w-full h-auto rounded-lg">
+          </div>
+          <button onclick="changeSlide(-1, 'collegeerp')"
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-1000">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button onclick="changeSlide(1, 'collegeerp')"
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-1000">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <br>
+      <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] p-6">
+        <h3 class="text-2xl font-bold text-green-500 mb-4">Project Details</h3>
+
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Description</h4>
+          <p class="text-gray-300 leading-relaxed">
+            This is my one of the biggest and complex project that i worked yet, its a complete college management system having nearly 15+ portals and a comprehensive yet fully dynamic website with Content management system. 
+            College ERP is a comprehensive Enterprise Resource Planning system designed to streamline and automate 
+            various administrative and academic processes in educational institutions. It provides an integrated 
+            platform for managing student records, faculty information, course management, attendance tracking, 
+            and administrative workflows, making college operations more efficient and transparent.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside text-gray-300 space-y-2">
+            <li><strong>Student Information Management:</strong> Complete student profile with admission details, academic records, and personal information</li>
+            <li><strong>Faculty & Staff Management:</strong> Comprehensive faculty profiles, workload management, and staff directory</li>
+            <li><strong>Course & Curriculum Management:</strong> Dynamic course creation, syllabus management, and timetable scheduling</li>
+            <li><strong>Attendance Tracking System:</strong> Real-time attendance marking with automated reports and alerts</li>
+            <li><strong>Examination & Grading System:</strong> Online exam management, result processing, and grade card generation</li>
+            <li><strong>Administrative Dashboard:</strong> Centralized control panel with analytics and insights</li>
+            <li><strong>Library Management:</strong> Book issue/return system with automated fine calculation</li>
+            <li><strong>Fee Management:</strong> Online fee payment, receipt generation, and payment tracking</li>
+            <li><strong>Notice Board:</strong> Digital announcement system for college-wide communications</li>
+            <li><strong>Document Management:</strong> Digital storage for certificates, mark sheets, and important documents</li>
+            
+            <li><strong>User Authentication:</strong> Role-based access control for students, faculty, and administrators</li>
+            <li><strong>Content Management System:</strong> Dynamic website management with easy content updates</li>
+            <li><strong>15+ Dedicated Portals:</strong> Specialized portals for different departments and functions</li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">Technical Specifications</h4>
+          <div class="grid grid-cols-2 gap-4 text-gray-300">
+            <div>
+              <p class="font-semibold">Frontend (React):</p>
+              <ul class="list-disc list-inside">
+                <li>React.js</li>
+                <li>React Router</li>
+                <li>Redux/Context API</li>
+                <li>Axios for API calls</li>
+                <li>Material-UI / Tailwind CSS</li>
+                <li>Responsive Design</li>
+                <li>React Hooks</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Backend (Node.js + Express):</p>
+              <ul class="list-disc list-inside">
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>RESTful API Design</li>
+                <li>JWT Authentication</li>
+                <li>Middleware Integration</li>
+                <li>Express Validator</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Database (MongoDB):</p>
+              <ul class="list-disc list-inside">
+                <li>MongoDB</li>
+                <li>Mongoose ODM</li>
+                <li>Schema Design</li>
+                <li>Indexing & Aggregation</li>
+                <li>Data Relationships</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Security:</p>
+              <ul class="list-disc list-inside">
+                <li>JWT Token Authentication</li>
+                <li>Bcrypt Password Hashing</li>
+                <li>CORS Configuration</li>
+                <li>Input Validation & Sanitization</li>
+                <li>Role-Based Access Control</li>
+                <li>CSRF Protection</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Features & Tools:</p>
+              <ul class="list-disc list-inside">
+                <li>File Upload (Multer)</li>
+                <li>PDF Generation</li>
+                <li>Email Service (Nodemailer)</li>
+                <li>Data Export (Excel/CSV)</li>
+                <li>Comprehensive Search & Filters</li>
+                <li>Real-time Updates</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Development Tools:</p>
+              <ul class="list-disc list-inside">
+                <li>Git & GitHub</li>
+                <li>VS Code</li>
+                <li>Postman (API Testing)</li>
+                <li>MongoDB Compass</li>
+                <li>npm</li>
+                <li>Nodemon</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Architecture:</p>
+              <ul class="list-disc list-inside">
+                <li>MERN Stack</li>
+                <li>MVC Pattern</li>
+                <li>Component-Based Architecture</li>
+                <li>15+ Integrated Portals</li>
+                <li>Dynamic CMS</li>
+                <li>Scalable & Modular Design</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xl text-white mb-2">Project Links</h4>
+          <div class="flex space-x-4" style="padding-bottom: 15px;">
+            <a href="#" target="_blank"
+              class="text-blue-400 hover:text-blue-300 flex items-center">
+              <i class="fab fa-github mr-2"></i>
+              GitHub Repository
+            </a>
+            <a href="#" target="_blank"
+              class="text-blue-400 hover:text-blue-300 flex items-center">
+              <i class="fas fa-globe mr-2"></i>
+              Website
+            </a>
+          </div>
+        </div>
+
+        <!-- My Learning Section -->
+        <div class="mb-6">
+          <h4 class="text-xl text-white mb-2">My Learnings</h4>
+          <div class="bg-gray-800 rounded-lg p-6">
+            <ul class="list-disc list-inside text-gray-300 space-y-3">
+              <li>Mastered full-stack development with MERN Stack (MongoDB, Express.js, React, Node.js)</li>
+              <li>Gained deep experience in NoSQL database design with MongoDB and Mongoose</li>
+              <li>Developed expertise in building RESTful APIs with Express.js and Node.js</li>
+              <li>Learned modern React development with Hooks, Context API, and component architecture</li>
+              <li>Implemented secure authentication systems using JWT and bcrypt</li>
+              <li>Enhanced skills in asynchronous JavaScript and Promise handling</li>
+              <li>Improved understanding of state management and data flow in large applications</li>
+              <li>Learned to handle file uploads, email services, and third-party integrations</li>
+              <li>Developed problem-solving skills in building complex, scalable systems</li>
+              <li>Gained experience in API testing and debugging with Postman</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
   <div id="bharatDarshanModal"
     class="modal fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
     <div class="modal-content bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
